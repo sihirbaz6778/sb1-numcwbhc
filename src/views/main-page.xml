@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Yoklama Sistemi" />
+    
+    <StackLayout>
+        <Button text="Yoklama Al" tap="{{ startAttendance }}" class="btn btn-primary" />
+        <Button text="Öğrenci Ekle" tap="{{ navigateToAddStudent }}" class="btn btn-secondary" />
+        <Button text="Raporlar" tap="{{ navigateToReports }}" class="btn btn-info" />
+        
+        <ListView items="{{ students }}" itemTap="{{ onStudentTap }}" height="300">
+            <ListView.itemTemplate>
+                <StackLayout orientation="horizontal" padding="10">
+                    <Label text="{{ name }}" width="60%" />
+                    <Label text="{{ studentNumber }}" width="40%" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>

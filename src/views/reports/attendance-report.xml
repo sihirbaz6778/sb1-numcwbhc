@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Yoklama Raporu" />
+    
+    <ScrollView>
+        <StackLayout padding="10">
+            <Label text="{{ 'Tarih: ' + currentDate }}" class="h3" />
+            <Label text="{{ 'Toplam Öğrenci: ' + totalStudents }}" class="body" />
+            <Label text="{{ 'Mevcut: ' + presentCount }}" class="body text-success" />
+            <Label text="{{ 'Devamsız: ' + absentCount }}" class="body text-danger" />
+            
+            <Label text="Devamsız Öğrenciler" class="h4 m-t-20" />
+            <ListView items="{{ absentStudents }}" height="300">
+                <ListView.itemTemplate>
+                    <StackLayout padding="10">
+                        <Label text="{{ name }}" class="body" />
+                        <Label text="{{ studentNumber }}" class="footnote" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+            
+            <Button text="PDF Olarak Kaydet" tap="{{ exportToPdf }}" class="btn btn-primary m-t-20" />
+        </StackLayout>
+    </ScrollView>
+</Page>

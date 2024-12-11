@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Öğrenci Ekle" />
+    
+    <StackLayout padding="10">
+        <TextField hint="Öğrenci Adı" text="{{ studentName }}" />
+        <TextField hint="Öğrenci Numarası" text="{{ studentNumber }}" />
+        <Button text="Fotoğraf Çek" tap="{{ capturePhoto }}" class="btn btn-primary" />
+        <Image src="{{ studentPhoto }}" height="200" visibility="{{ studentPhoto ? 'visible' : 'collapsed' }}" />
+        <Button text="Kaydet" tap="{{ saveStudent }}" class="btn btn-success" />
+    </StackLayout>
+</Page>
